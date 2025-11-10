@@ -109,13 +109,63 @@ import random
 #     result = task6(angle,ladder_length)
 #     print(f"Wysokość na jaką sięga koniec drabiny: {result:.2f}")
 
-#zadanie 7__________________
-def task7():
+#zadanie 7_________________________
+# import math
+# def task7():
+#     for angle in range(0,90):
+#         radians = math.radians(angle)
+#         result = math.sin(radians)**2 + math.cos(radians)**2
+#         print(f"Kąt: {angle:2d}°, wynik: {result:.6f}")
+# def main():
+#     task7()
+#
+# if __name__ == "__main__":
+#     main()
+
+#zadanie 8________________________
+def coding(uncoding_word, coding_word):
     result = ""
-    for i in range(0,91):
+    for i in range(len(uncoding_word)):
+        result += chr(ord(uncoding_word[i]) ^ ord(coding_word[i]))
+    return result
 
+def main():
+    coding_word = "algorytm"
+    uncoding_word = "kodykody"
+    encrypted_word = coding(uncoding_word, coding_word)
+    print("zaszyfrowane", encrypted_word)
+    print("odszyfrowane", coding(uncoding_word, encrypted_word))
+if __name__ == "__main__":
+    main()
+#zadanie 9_______________
+def power_of_two():
+    number =  int(input("Podaj wykładnik p: "))
+    result = 1 << number
+    print(f"wynik dla p {number}  wynosi {result}")
+def main():
+    power_of_two()
+if __name__ == "__main__":
+    main()
+#zadanie 10_________________
+import math
+import sys
+def task10(x):
+    print(f"math.trunc: {math.trunc(x)}")
+    print(f"math.floor: {math.floor(x)}")
+    print(f"math.ceil: {math.ceil(x)}")
+    version_of_python = sys.version_info
+    if version_of_python.major == 3 and version_of_python.minor >= 9:
+        b = int(input("Podaj 1 liczbe: "))
+        c = int(input("Podaj 2 liczbe: "))
+        print(f"(Najmniejsza Wspólna Wielokrotność:{math.lcm(b,c)}, Największy Wspólny Dzielnik:{math.gcd(b,c)})")
 
+def main():
+    a = float(input("Podaj liczbe zmiennoprzecinką: "))
+    task10(a)
+if __name__ == "__main__":
+    main()
 
+#zadanie 11________________
 if __name__ == '__main__':
     main()
     # task2()
