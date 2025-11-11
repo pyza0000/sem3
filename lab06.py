@@ -163,8 +163,6 @@ if __name__ == "__main__":
 #     a = float(input("Podaj liczbe zmiennoprzecinką: "))
 #     task10(a)
 
-#zadanie 11________________
-
 
 # if __name__ == '__main__':
 #     main()

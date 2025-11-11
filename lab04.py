@@ -1,4 +1,4 @@
-# from typing import List
+from typing import List
 # class Student:
 #     def __init__ (self):
 #         self.name = ""
@@ -12,7 +12,8 @@
 #     def get_marks(self) -> List[int]:
 #         return self.marks
 #     def say_hello(self) -> None:
-#         print("Hello! I'm " + self.name + " " + self.last_name)
+#         print("Hello! I'm " + self.name + " " + self.last_name + "my index is : "
+#               + str(self.index))
 #     def getavg(self) -> float:
 #         return (sum(self.marks) / len(self.marks))
 #     def giveindex(self,idx: str) -> None:
@@ -27,6 +28,35 @@
 # s.say_hello()
 # print(f"średnia ocen {s.getavg()}")
 
-#_---------------------------------------------------------------------------------------------------S
-class Vehicle:
-    def get
+#zadanie 2 --------------------------------------------------------------------------------------------S
+# class Vehicle:
+#     def get_sound(self) -> None:
+#         print("vehicle's brum brum")
+#     def get_owner(self) -> None:
+#         return ""
+# class Car(Vehicle):
+#     def __init__ (self, owner: str, table: str):
+#         self.owner = owner
+#         self.table = table
+#     def get_sound(self) -> None:
+#         print("car's brum brum")
+#     def get_owner(self) -> str:
+#         return self.owner
+# def vehicle_test():
+#     v = Vehicle()
+#     c = Car("Filip","PWA")
+#
+#     v.get_sound()
+#     c.get_sound()
+#     v.get_owner() #klasa vehicle nie posiada metody get_owner
+#     c.get_owner()
+# vehicle_test()
+
+#zadanie 3____________________________________________________
+class Student:
+    quantity = 0
+    def __init__ (self):
+        self.name = ""
+        self.last_name = ""
+        self.marks = []
+        Student.quantity += 1
