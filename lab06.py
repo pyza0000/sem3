@@ -123,52 +123,52 @@ import random
 #     main()
 
 #zadanie 8________________________
-def coding(uncoding_word, coding_word):
+def coding(word, key):
     result = ""
-    for i in range(len(uncoding_word)):
-        result += chr(ord(uncoding_word[i]) ^ ord(coding_word[i]))
+    for i in range(len(word)):
+        result += chr(ord(word[i]) ^ ord(key[i]))
     return result
 
 def main():
-    coding_word = "algorytm"
-    uncoding_word = "kodykody"
-    encrypted_word = coding(uncoding_word, coding_word)
+    tx = "algorytm"
+    kx = "kodykody"
+    encrypted_word = coding(tx, kx)
     print("zaszyfrowane", encrypted_word)
-    print("odszyfrowane", coding(uncoding_word, encrypted_word))
+    print("odszyfrowane", coding(encrypted_word, kx))
 if __name__ == "__main__":
     main()
 #zadanie 9_______________
-def power_of_two():
-    number =  int(input("Podaj wykładnik p: "))
-    result = 1 << number
-    print(f"wynik dla p {number}  wynosi {result}")
-def main():
-    power_of_two()
-if __name__ == "__main__":
-    main()
+# def power_of_two():
+#     number =  int(input("Podaj wykładnik p: "))
+#     result = 1 << number
+#     print(f"wynik dla p {number}  wynosi {result}")
+# def main():
+#     power_of_two()
+# if __name__ == "__main__":
+#     main()
 #zadanie 10_________________
-import math
-import sys
-def task10(x):
-    print(f"math.trunc: {math.trunc(x)}")
-    print(f"math.floor: {math.floor(x)}")
-    print(f"math.ceil: {math.ceil(x)}")
-    version_of_python = sys.version_info
-    if version_of_python.major == 3 and version_of_python.minor >= 9:
-        b = int(input("Podaj 1 liczbe: "))
-        c = int(input("Podaj 2 liczbe: "))
-        print(f"(Najmniejsza Wspólna Wielokrotność:{math.lcm(b,c)}, Największy Wspólny Dzielnik:{math.gcd(b,c)})")
-
-def main():
-    a = float(input("Podaj liczbe zmiennoprzecinką: "))
-    task10(a)
-if __name__ == "__main__":
-    main()
+# import math
+# import sys
+# def task10(x):
+#     print(f"math.trunc: {math.trunc(x)}")
+#     print(f"math.floor: {math.floor(x)}")
+#     print(f"math.ceil: {math.ceil(x)}")
+#     version_of_python = sys.version_info
+#     if version_of_python.major == 3 and version_of_python.minor >= 9:
+#         b = int(input("Podaj 1 liczbe: "))
+#         c = int(input("Podaj 2 liczbe: "))
+#         print(f"(Najmniejsza Wspólna Wielokrotność:{math.lcm(b,c)}, Największy Wspólny Dzielnik:{math.gcd(b,c)})")
+#
+# def main():
+#     a = float(input("Podaj liczbe zmiennoprzecinką: "))
+#     task10(a)
+# if __name__ == "__main__":
+#     main()
 
 #zadanie 11________________
 
-if __name__ == '__main__':
-    main()
+# if __name__ == '__main__':
+#     main()
     # task2()
     # task3()
     # task4()
