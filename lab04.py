@@ -65,24 +65,60 @@ from typing import List
 # vehicle_test()
 
 #zadanie 5 ______________________________________________
-class Item:
-    def get_sound(self) -> None:
-        print("item's sound")
-class Element:
-    def get_sound(self) -> None:
-        print("element's sound")
-class Thing(Element, Item):
-    def say_hello(self)  -> None:
-        print("hello")
-def test_sound():
-    i  = Item()
-    e = Element()
-    t = Thing()
-    t.say_hello()
-    e.get_sound()
-    i.get_sound()
+# class Item:
+#     def get_sound(self) -> None:
+#         print("item's sound")
+# class Element:
+#     def get_sound(self) -> None:
+#         print("element's sound")
+# # class Thing(Element, Item):
+# #     def say_hello(self)  -> None:
+# #         print("hello")
+# class Thing(Item,Element): #zmieniona kolejność
+#     def say_hello(self)  -> None:
+#         print("hello")
+# def test_sound():
+#     i  = Item()
+#     e = Element()
+#     t = Thing()
+#
+#     t.get_sound()
+#     e.get_sound()
+#     i.get_sound()
+
+#zadanie 6_________________
+class Student:
+    def __init__ (self, name: str, last_name: str, index: int):
+        self.name = name
+        self.last_name = last_name
+        self.index = index
+    def get_avg(self) -> float:
+        return (sum(self.marks) / len(self.marks))
+    def __repr__ (self) ->  str:
+        return (self.name + " " + self.last_name)
+    def __str__ (self) -> str:
+        return (self.last_name + " " + self.name)
+    def __eq__(self, o: object) -> bool:  # funkcja do sprawdzania równości (==)
+        # return self.index == o.
+        pass
+    def __ne__(self, o: object) -> bool:  # funkcja zastępująca !=
+        return self.index != o.index
+    def __lt__(self, o: object) -> bool:  # funkcja zastępująca <
+        return self.index < o.index
+    def __gt__(self, o: object) -> bool:  # funkcja zastępująca >
+        return self.index > o.index
+def task6():
+    s1 = Student('Joe', 'Doe', 111111)
+    print(repr(s1))
+    s2 = Student('Jane', 'Key', 222222)
+    print(str(s2))
+    if (s1 == s2):
+        print("objects equal!")
+    else:
+        print("not equal..")
 def main():
-    test_sound()
-    # task1()
+    task6()
+    #test_sound()
+    #task1()
 if __name__ == "__main__":
     main()
