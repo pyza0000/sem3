@@ -3,7 +3,7 @@ import random
 import sys
 
 def main():
-    pass
+    "xxx"
 if __name__ == "__main__":
     main()
 
