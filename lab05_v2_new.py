@@ -133,29 +133,76 @@
 #         print("x błąd:", e)
 # if __name__ == "__main__":
 
+# import os
+# def task6():
+#     # funkcja wypisująca zawartość katalogu
+#     def directory_tree(path: str,depth:int =0) :
+#         try:
+#             entries = os.listdir(path)  # pobranie listy plików i folderów
+#         except FileNotFoundError:
+#             print("Podany katalog nie istnieje.")
+#             return
+#         if len(entries) == 0:
+#             return
+#         for entry in entries:
+#             full_path = os.path.join(path, entry)
+#             # wcięcia zależne od poziomu zagłębienia
+#             print("  " * depth + "|-- " + entry)
+#             # jeśli to katalog → wchodzimy głębiej
+#             if os.path.isdir(full_path):
+#                 directory_tree(full_path, depth + 1)
+#     # wywołanie funkcji z przykładową ścieżką
+#     directory_tree("C:\\Users\\HAHHAHAHAHAHAH\\Desktop\\skryptowe jezyki programownaia\\code\\sem3\\test")
+# if __name__ == "__main__":
+#     task6()
+
+import shutil
 import os
-def task6():
-    # funkcja wypisująca zawartość katalogu
-    def directory_tree(path: str,depth:int =0) -> None:
-        try:
-            entries = os.listdir(path)  # pobranie listy plików i folderów
-        except FileNotFoundError:
-            print("Podany katalog nie istnieje.")
-        else:
-            print("Wszystko poszło pomyślnie.")
-        if len(entries) == 0:
-            return
-        for entry in entries:
-            # drukujemy element ze stosownym wcięciem
-            print("  " * depth + "|-- " + entry)
-            # pełna ścieżka elementu
-            full_path = os.path.join(path, entry)
-            # sprawdzamy, czy element jest folderem
-            if os.path.isdir(full_path):
-                # jeśli tak → schodzimy głębiej
-                directory_tree(full_path, depth + 1)
-            # jeśli to plik → nic nie robimy (rekurencja niepotrzebna)
-    # wywołanie funkcji z przykładową ścieżką
-    directory_tree("C:\\Users\\HAHHAHAHAHAHAH\\Desktop\\skryptowe jezyki programownaia\\code\\sem3\\test")
+
+def test_copy():
+    # 1. Próba skopiowania pliku, którego NIE MA w katalogu docelowym
+    print("\n--- Przypadek 1: plik nie istnieje w katalogu docelowym ---")
+    try:
+        shutil.copy("source.txt", "dest_dir/")  # dest_dir istnieje
+        print("Skopiowano plik do nowego katalogu.")
+    except Exception as e:
+        print("Błąd:", e)
+
+    # 2. Próba skopiowania pliku, który JUŻ ISTNIEJE w katalogu docelowym
+    print("\n--- Przypadek 2: plik już istnieje w katalogu docelowym ---")
+    try:
+        shutil.copy("source.txt", "dest_dir/source.txt")
+        print("Plik został nadpisany.")
+    except Exception as e:
+        print("Błąd:", e)
+
+    # 3. Próba skopiowania do katalogu, który NIE ISTNIEJE
+    print("\n--- Przypadek 3: katalog docelowy nie istnieje ---")
+    try:
+        shutil.copy("source.txt", "no_such_dir/")
+        print("Skopiowano pomyślnie.")
+    except Exception as e:
+        print("Błąd:", e)  # normalnie: FileNotFoundError
 if __name__ == "__main__":
-    task6()
+    test_copy()
+
+    import random
+
+
+    def save_random_numbers(n: int, a: int, b: int) -> None:
+        """
+        Funkcja losuje n liczb z przedziału <a, b>
+        i zapisuje je do pliku numbers.txt – każda liczba w osobnej linii.
+        """
+
+        try:
+            # otwarcie pliku w trybie zapisu (nadpisuje jeśli istnieje)
+            with open("numbers.txt", "w") as file:
+
+                for _ in range(n):
+                    number = random.randint(a, b)  # losowanie liczby
+                    file.write(str(number) + "\n")  # zapis do pliku
+
+            print("Wylosowane liczby zapisano do pliku numbers.txt")
+        except Exception as e:
+            print("Błąd zapisu pliku:", e)
