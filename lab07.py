@@ -32,11 +32,12 @@ def task2():
     f.close()
 
 def task3():
-    f = open("inwokacja.txt", "r")
-    content = f.read()
-    f.close()
+    x = open("inwokacja.txt", "r", encoding="utf-8")
+    content = x.read()
+    x.close()
     text_replaced = content.replace("...", "<ELLIPSIS>")
-    text_replaced = content.replace(".", "...")
+    text_replaced = text_replaced.replace(".", "...")
+    text_replaced = text_replaced.replace("<ELLIPSIS>", "...")
     print(text_replaced)
 
 def task4():
@@ -137,8 +138,7 @@ def task10():
     print("Koniec x/y:", end_xy)
     print("Trzyznakowe od a:", three_a)
     print("Samogłoski:", vowel)
-def task11():
+def task11(): #in file lab07_test
     pass
 if __name__ == '__main__':
-    task8()
     pass
