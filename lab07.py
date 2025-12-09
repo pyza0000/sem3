@@ -80,7 +80,7 @@ def task6():
 def task7():
     import re
     pattern = re.compile(r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)")
-    emails = ["pyza171@gmail.com", "filpez000@pbs.edu.pl", "koduje.tylko.w.nocy@gmail.com"]
+    emails = ["x", "x", "koduje.tylko.w.nocy@gmail.com"]
     for x in emails:
         if pattern.match(x):
             print(x, "prawidłowy")
